@@ -1,0 +1,56 @@
+.text-sm {
+  font-size: 20px;
+}
+
+.text-md {
+  font-size: 26px;
+}
+
+.text-lg {
+  font-size: 32px;
+}
+
+.skill-bar {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.project-avatar {
+  height: 100px;
+  width: 100px;
+}
+
+.project-card {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 298px;
+  padding: 20px;
+  width: 400px;
+}
+
+.project-card-content {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.project-card-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

@@ -13,13 +13,25 @@
 .skill-bar {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
   padding: 10px;
+}
+
+.skill-bar-item {
+  align-items: center;
+  display: flex;
 }
 
 .page-wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
+  text-align: center;
   width: 100vw;
 }
 
@@ -36,7 +48,7 @@
   flex-direction: column;
   min-height: 298px;
   padding: 20px;
-  width: 400px;
+  max-width: 400px;
 }
 
 .project-card-content {

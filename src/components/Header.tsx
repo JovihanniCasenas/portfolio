@@ -53,7 +53,7 @@ const Header = (props: HeaderProps) => {
                 <Toolbar>
                     <Avatar
                         alt="logo"
-                        src="public/assets/j-logo.png"
+                        src="/assets/j-logo.png"
                         sx={{ pr: "10px", cursor: "pointer" }}
                         onClick={handleClick}
                     />

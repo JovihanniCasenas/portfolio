@@ -9,7 +9,7 @@ const WorkExperience = () => {
             style={{
                 height: "100px",
                 width: "100px",
-                backgroundImage: "url('public/assets/rocket.gif')",
+                backgroundImage: "url('/assets/rocket.gif')",
                 backgroundSize: "cover",
                 margin: "10px",
             }}

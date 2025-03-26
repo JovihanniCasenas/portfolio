@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AppBar, Avatar, Toolbar, Box, Drawer, IconButton, List, ListItem, Tabs, Tab } from "@mui/material"
-import { Close } from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
 import colors from "../colors"
 import { Link } from 'react-scroll'
 
@@ -21,13 +21,9 @@ const Header = (props: HeaderProps) => {
     // @ts-ignore
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         // event is unused in the function but is required to be passed in
-        if (!props.isMobile) {
-            setSelectedDrawerItem("about")
-            setTabVal(0)
-            props.onClick("about")
-        } else {
-            setIsDrawerOpen(true)
-        }
+        setSelectedDrawerItem("about")
+        setTabVal(0)
+        props.onClick("about")
     };
 
     const handleClose = () => {
@@ -51,13 +47,26 @@ const Header = (props: HeaderProps) => {
     return (
         <>
             <AppBar position="sticky" sx={{ background: "transparent", boxShadow: "none", padding: "10px", width: '100vw', mb: "10px" }}>
-                <Toolbar>
+                <Toolbar style={{justifyContent: "space-between"}}>
                     <Avatar
                         alt="logo"
                         src="/assets/j-logo.png"
                         sx={{ pr: "10px", cursor: "pointer" }}
                         onClick={handleClick}
                     />
+
+                    {props.isMobile && (
+                        <IconButton
+                            aria-label="menu"
+                            size="large"
+                            sx={{
+                                color: colors.textLight
+                            }}
+                            onClick={() => setIsDrawerOpen(true)}
+                        >
+                            <Menu />
+                        </IconButton>
+                    )}
 
                     <Drawer
                         open={isDrawerOpen}

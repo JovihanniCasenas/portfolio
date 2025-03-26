@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { AppBar, Avatar, Toolbar, Box, Drawer, List, ListItem, Tabs, Tab } from "@mui/material"
+import { AppBar, Avatar, Toolbar, Box, Drawer, IconButton, List, ListItem, Tabs, Tab } from "@mui/material"
+import { Close } from "@mui/icons-material";
 import colors from "../colors"
 import { Link } from 'react-scroll'
 
@@ -65,10 +66,31 @@ const Header = (props: HeaderProps) => {
                         <Box
                             sx={{
                                 height: "100vh",
+                                minWidth: "50vw"
                             }}
                             role="presentation"
                             onClick={handleClose}
                         >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                    padding: "10px",
+                                    paddingBottom: "0px",
+                                    marginBottom: "0px",
+                                }}
+                            >
+                                <IconButton
+                                    aria-label="close"
+                                    size="large"
+                                    sx={{
+                                        color: colors.primary
+                                    }}
+                                >
+                                    <Close />
+                                </IconButton>
+                            </div>
+
                             <List>
                                 {pages.map((page, idx) => {
                                     return (
@@ -77,6 +99,8 @@ const Header = (props: HeaderProps) => {
                                                 backgroundColor: selectedDrawerItem === pages[idx] ? colors.secondary : "white",
                                                 cursor: "pointer",
                                                 color: colors.tertiary,
+                                                marginY: "10px",
+                                                paddingLeft: "20px",
                                             }}
                                             onClick={handleDrawerItemClick.bind(this, page)}
                                         >
@@ -87,7 +111,7 @@ const Header = (props: HeaderProps) => {
                             </List>
                         </Box>
                     </Drawer>
-                    
+
                     {!props.isMobile && (
                         <Tabs
                             value={tabVal}
@@ -108,7 +132,8 @@ const Header = (props: HeaderProps) => {
                                             '&:hover': {
                                                 color: colors.tertiary,
                                                 backgroundColor: colors.secondary,
-                                                borderRadius: "20px",
+                                                borderTopLeftRadius: "20px",
+                                                borderTopRightRadius: "20px",
                                             },
                                             '&.Mui-selected': {
                                                 color: colors.textLight,

@@ -21,9 +21,9 @@ const Projects = () => {
                             <Avatar alt="Blog" src="/assets/astronaut-no-bg.png" sx={{ width: 100, height: 100 }} />
                             <p className="project-card-title text-lg" style={{ color: colors.tertiary }}>Blog</p>
                             <p className="project-card-content text-sm" style={{ color: colors.tertiary }}>
-                                Site for my creative writing pieces
-                                developed using VueJS with the Vuetify framework
-                                then deployed in netlify
+                                Website for my creative writing pieces
+                                developed using VueJS and Vuetify framework,
+                                then deployed on Netlify.
                             </p>
                         </div>
                     </a>

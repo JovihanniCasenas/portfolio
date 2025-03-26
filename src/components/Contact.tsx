@@ -1,41 +1,49 @@
 import { Gmail, LinkedIn, GitHubLight } from "developer-icons"
-import { Stack, Tooltip } from "@mui/material"
-import colors from "../colors"
+import { Grid2, Tooltip } from "@mui/material"
 
-const Contact = () => {
+interface ContactProps {
+    isMobile: boolean;
+}
+
+const Contact = (props: ContactProps) => {
     return (
         <div className="page-wrapper">
             <h1>Contact Me</h1>
-            <Stack direction={'row'} spacing={10} sx={{ marginBottom: "10px", width: "fit-content", alignItems: "center" }}>
-                <Tooltip title="Email">
-                    <a
-                        href="mailto:casenasjovihanni@gmail.com"
-                        style={{ color: colors.textLight, display: "inline-flex", flexDirection: "column" }}
-                    >
-                        <Gmail size={100} />
-                    </a>
-                </Tooltip>
-                <Tooltip title="LinkedIn">
-                    <a
-                        href="https://www.linkedin.com/in/jovihanni-casenas-189438286"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: colors.textLight, display: "inline-flex", flexDirection: "column" }}
-                    >
-                        <LinkedIn size={100} />
-                    </a>
-                </Tooltip>
-                <Tooltip title="GitHub">
-                    <a
-                        href="https://github.com/JovihanniCasenas"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: colors.textLight, display: "inline-flex", flexDirection: "column" }}
-                    >
-                        <GitHubLight size={100} />
-                    </a>
-                </Tooltip>
-            </Stack>
+
+            <Grid2 container spacing={2} width={props.isMobile ? "80vw" : "50vw"} justifyContent="center" textAlign={"center"}>
+                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>
+                    <Tooltip title="Email">
+                        <a href="mailto:casenasjovihanni@gmail.com">
+                            <Gmail />
+                        </a>
+                    </Tooltip>
+                </Grid2>
+
+                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}>
+
+                    <Tooltip title="LinkedIn">
+                        <a
+                            href="https://www.linkedin.com/in/jovihanni-casenas-189438286"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <LinkedIn />
+                        </a>
+                    </Tooltip>
+                </Grid2>
+
+                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                    <Tooltip title="GitHub">
+                        <a
+                            href="https://github.com/JovihanniCasenas"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <GitHubLight />
+                        </a>
+                    </Tooltip>
+                </Grid2>
+            </Grid2>
         </div>
     )
 }

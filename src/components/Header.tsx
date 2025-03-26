@@ -1,12 +1,48 @@
-import { AppBar, Avatar, Toolbar, Button } from "@mui/material"
+import { useState } from "react";
+import { AppBar, Avatar, Toolbar, Box, Drawer, List, ListItem, Tabs, Tab } from "@mui/material"
 import colors from "../colors"
 import { Link } from 'react-scroll'
 
 interface HeaderProps {
+    isMobile: boolean;
     onClick: (tab: string) => void;
 }
 
 const Header = (props: HeaderProps) => {
+    const [tabVal, setTabVal] = useState<number>(0)
+    const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
+    const [selectedDrawerItem, setSelectedDrawerItem] = useState<string>("about")
+
+
+    const pages = ['about', 'skillset', 'work', 'projects', 'education', 'contact']
+    const pageTitles = ['About Me', 'Skillset', 'Work Experience', 'Projects', 'Education', 'Contact Me']
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        if (!props.isMobile) {
+            setSelectedDrawerItem("about")
+            setTabVal(0)
+            props.onClick("about")
+        } else {
+            setIsDrawerOpen(true)
+        }
+    };
+
+    const handleClose = () => {
+        setIsDrawerOpen(false)
+    };
+
+    const handleDrawerItemClick = (page: string) => {
+        props.onClick(page)
+        setSelectedDrawerItem(page)
+        setTabVal(pages.indexOf(page))
+        setIsDrawerOpen(false)
+    }
+
+    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+        setTabVal(newValue);
+        setSelectedDrawerItem(newValue === 0 ? "about" : pages[newValue])
+    };
+
     return (
         <>
             <AppBar position="sticky" sx={{ background: "transparent", boxShadow: "none", padding: "10px", width: '100vw', mb: "10px" }}>
@@ -15,116 +51,74 @@ const Header = (props: HeaderProps) => {
                         alt="logo"
                         src="public/j-logo.png"
                         sx={{ pr: "10px", cursor: "pointer" }}
-                        onClick={() => props.onClick("about")}
+                        onClick={handleClick}
                     />
 
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="about"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("about")}
+                    <Drawer
+                        open={isDrawerOpen}
+                        onClose={handleClose}
                     >
-                        About Me
-                    </Button>
-
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="skillset"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("skillset")}
-                    >
-                        Skillset
-                    </Button>
-
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="work"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("work")}
-                    >
-                        Work Experience
-                    </Button>
-
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="projects"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("projects")}
-                    >
-                        Projects
-                    </Button>
-
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="education"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("education")}
-                    >
-                        Education
-                    </Button>
-
-                    <Button
-                        color="inherit"
-                        component={Link}
-                        to="contact"
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        sx={{
-                            '&:hover': {
-                                color: colors.tertiary,
-                                backgroundColor: colors.secondary,
-                            },
-                        }}
-                        onClick={() => props.onClick("contact")}
-                    >
-                        Contact Me
-                    </Button>
+                        <Box
+                            sx={{
+                                height: "100vh",
+                            }}
+                            role="presentation"
+                            onClick={handleClose}
+                        >
+                            <List>
+                                {pages.map((page, idx) => {
+                                    return (
+                                        <ListItem
+                                            sx={{
+                                                backgroundColor: selectedDrawerItem === pages[idx] ? colors.secondary : "white",
+                                                cursor: "pointer",
+                                                color: colors.tertiary,
+                                            }}
+                                            onClick={handleDrawerItemClick.bind(this, page)}
+                                        >
+                                            {pageTitles[idx]}
+                                        </ListItem>
+                                    )
+                                })}
+                            </List>
+                        </Box>
+                    </Drawer>
+                    
+                    {!props.isMobile && (
+                        <Tabs
+                            value={tabVal}
+                            onChange={handleTabChange}
+                            sx={{
+                                '& .MuiTabs-indicator': {
+                                    backgroundColor: colors.secondary,
+                                },
+                            }}
+                        >
+                            {pages.map((page, idx) => {
+                                return (
+                                    <Tab
+                                        label={pageTitles[idx]}
+                                        component={Link}
+                                        to={page}
+                                        sx={{
+                                            '&:hover': {
+                                                color: colors.tertiary,
+                                                backgroundColor: colors.secondary,
+                                                borderRadius: "20px",
+                                            },
+                                            '&.Mui-selected': {
+                                                color: colors.textLight,
+                                                fontWeight: "bold",
+                                            },
+                                            color: colors.textLight,
+                                        }}
+                                        onClick={() => props.onClick(page)}
+                                    >
+                                    </Tab>
+                                )
+                            })}
+                        </Tabs>
+                    )}
                 </Toolbar>
             </AppBar>
         </>

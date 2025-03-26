@@ -8,7 +8,7 @@ interface ContactProps {
 const Contact = (props: ContactProps) => {
     return (
         <div className="page-wrapper">
-            <h1>Contact Me</h1>
+            <h1 id="contact">Contact Me</h1>
 
             <Grid2 container spacing={2} width={props.isMobile ? "80vw" : "50vw"} justifyContent="center" textAlign={"center"}>
                 <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>

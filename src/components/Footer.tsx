@@ -24,7 +24,7 @@ const Footer = (props: FooterProps) => {
                 <Tooltip title="Let's connect!" placement="right">
                     <div
                         style={{
-                            backgroundImage: "url('public/assets/astronaut.gif')",
+                            backgroundImage: "url('/assets/astronaut.gif')",
                             height: "80px",
                             backgroundSize: "contain",
                             backgroundRepeat: "no-repeat",
@@ -50,7 +50,7 @@ const Footer = (props: FooterProps) => {
                     style={{
                         width: "50vw",
                         height: "90px",
-                        backgroundImage: "url('public/assets/moon.png')",
+                        backgroundImage: "url('/assets/moon.png')",
                         backgroundSize: "cover",
                         bottom: "0px",
                     }}

@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>
-      <div style={{ backgroundImage: "url('public/assets/sky.png')", backgroundSize: "cover", minHeight: "100vh", width: "100vw", overflow: "hidden", color: colors.textLight }}>
+      <div style={{ backgroundImage: "url('/assets/sky.png')", backgroundSize: "cover", minHeight: "100vh", width: "100vw", overflow: "hidden", color: colors.textLight }}>
         <Header isMobile={isMobile} onClick={onClick} />
         <div style={{ minHeight: "calc(100vh - 270px)" }}>
           {currentTab}

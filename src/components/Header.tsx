@@ -108,7 +108,8 @@ const Header = (props: HeaderProps) => {
                                             '&:hover': {
                                                 color: colors.tertiary,
                                                 backgroundColor: colors.secondary,
-                                                borderRadius: "20px",
+                                                borderTopLeftRadius: "20px",
+                                                borderTopRightRadius: "20px",
                                             },
                                             '&.Mui-selected': {
                                                 color: colors.textLight,

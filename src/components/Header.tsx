@@ -17,7 +17,9 @@ const Header = (props: HeaderProps) => {
     const pages = ['about', 'skillset', 'work', 'projects', 'education', 'contact']
     const pageTitles = ['About Me', 'Skillset', 'Work Experience', 'Projects', 'Education', 'Contact Me']
 
+    // @ts-ignore
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        // event is unused in the function but is required to be passed in
         if (!props.isMobile) {
             setSelectedDrawerItem("about")
             setTabVal(0)
@@ -38,7 +40,9 @@ const Header = (props: HeaderProps) => {
         setIsDrawerOpen(false)
     }
 
+    // @ts-ignore
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+        // event is unused in the function but is required to be passed in
         setTabVal(newValue);
         setSelectedDrawerItem(newValue === 0 ? "about" : pages[newValue])
     };
@@ -49,7 +53,7 @@ const Header = (props: HeaderProps) => {
                 <Toolbar>
                     <Avatar
                         alt="logo"
-                        src="public/j-logo.png"
+                        src="public/assets/j-logo.png"
                         sx={{ pr: "10px", cursor: "pointer" }}
                         onClick={handleClick}
                     />

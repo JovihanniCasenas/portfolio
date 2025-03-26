@@ -18,7 +18,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                     >
                         <div className="project-card">
-                            <Avatar alt="Blog" src="/src/assets/astronaut-no-bg.png" sx={{ width: 100, height: 100 }} />
+                            <Avatar alt="Blog" src="/public/assets/astronaut-no-bg.png" sx={{ width: 100, height: 100 }} />
                             <p className="project-card-title text-lg" style={{ color: colors.tertiary }}>Blog</p>
                             <p className="project-card-content text-sm" style={{ color: colors.tertiary }}>
                                 Site for my creative writing pieces
@@ -41,7 +41,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                     >
                         <div className="project-card">
-                            <Avatar alt="Hi Low Game" src="/src/assets/high-low.png" sx={{ width: 100, height: 100 }} />
+                            <Avatar alt="Hi Low Game" src="/public/assets/high-low.png" sx={{ width: 100, height: 100 }} />
                             <p className="project-card-title text-lg" style={{ color: colors.tertiary }}>High Low</p>
                             <p className="project-card-content text-sm" style={{ color: colors.tertiary }}>
                                 Interactive game developed using flutter. Can be played via mobile, desktop, or web.

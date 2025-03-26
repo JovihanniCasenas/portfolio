@@ -47,7 +47,7 @@ const Header = (props: HeaderProps) => {
     return (
         <>
             <AppBar position="sticky" sx={{ background: "transparent", boxShadow: "none", padding: "10px", width: '100vw', mb: "10px" }}>
-                <Toolbar style={{justifyContent: "space-between"}}>
+                <Toolbar style={{ justifyContent: props.isMobile ? "space-between" : "center" }}>
                     <Avatar
                         alt="logo"
                         src="/assets/j-logo.png"

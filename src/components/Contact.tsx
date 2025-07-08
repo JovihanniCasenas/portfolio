@@ -10,8 +10,8 @@ const Contact = (props: ContactProps) => {
         <div className="page-wrapper">
             <h1 id="contact">Contact Me</h1>
 
-            <Grid2 container spacing={2} width={props.isMobile ? "80vw" : "50vw"} justifyContent="center" textAlign={"center"}>
-                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>
+            <Grid2 container spacing={2} width={props.isMobile ? "90vw" : "50vw"} justifyContent="center" textAlign={"center"}>
+                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>
                     <Tooltip title="Email">
                         <a href="mailto:casenasjovihanni@gmail.com">
                             <Gmail />
@@ -19,7 +19,7 @@ const Contact = (props: ContactProps) => {
                     </Tooltip>
                 </Grid2>
 
-                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
 
                     <Tooltip title="LinkedIn">
                         <a
@@ -32,7 +32,7 @@ const Contact = (props: ContactProps) => {
                     </Tooltip>
                 </Grid2>
 
-                <Grid2 size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
                     <Tooltip title="GitHub">
                         <a
                             href="https://github.com/JovihanniCasenas"

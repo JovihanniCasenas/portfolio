@@ -1,28 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppBar, Avatar, Toolbar, Box, Drawer, IconButton, List, ListItem, Tabs, Tab } from "@mui/material"
 import { Close, Menu } from "@mui/icons-material";
 import colors from "../colors"
-import { Link } from 'react-scroll'
+import { Link as RouterLink } from "react-router-dom"
 
 interface HeaderProps {
     isMobile: boolean;
     onClick: (tab: string) => void;
+    currentTab: string;
 }
 
 const Header = (props: HeaderProps) => {
-    const [tabVal, setTabVal] = useState<number>(0)
     const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
-    const [selectedDrawerItem, setSelectedDrawerItem] = useState<string>("about")
-
+    const [tabVal, setTabVal] = useState<number>(0)
 
     const pages = ['about', 'skillset', 'work', 'projects', 'education', 'contact']
     const pageTitles = ['About Me', 'Skillset', 'Work Experience', 'Projects', 'Education', 'Contact Me']
 
-    // @ts-ignore
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        // event is unused in the function but is required to be passed in
-        setSelectedDrawerItem("about")
-        setTabVal(0)
+    // Update tab value when route changes
+    useEffect(() => {
+        const index = pages.indexOf(props.currentTab)
+        setTabVal(index >= 0 ? index : 0)
+    }, [props.currentTab, pages])
+
+    const handleClick = () => {
         props.onClick("about")
     };
 
@@ -32,16 +33,12 @@ const Header = (props: HeaderProps) => {
 
     const handleDrawerItemClick = (page: string) => {
         props.onClick(page)
-        setSelectedDrawerItem(page)
-        setTabVal(pages.indexOf(page))
         setIsDrawerOpen(false)
     }
 
-    // @ts-ignore
-    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-        // event is unused in the function but is required to be passed in
+    const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
         setTabVal(newValue);
-        setSelectedDrawerItem(newValue === 0 ? "about" : pages[newValue])
+        props.onClick(pages[newValue])
     };
 
     return (
@@ -78,7 +75,6 @@ const Header = (props: HeaderProps) => {
                                 minWidth: "50vw"
                             }}
                             role="presentation"
-                            onClick={handleClose}
                         >
                             <div
                                 style={{
@@ -95,6 +91,7 @@ const Header = (props: HeaderProps) => {
                                     sx={{
                                         color: colors.primary
                                     }}
+                                    onClick={handleClose}
                                 >
                                     <Close />
                                 </IconButton>
@@ -104,14 +101,17 @@ const Header = (props: HeaderProps) => {
                                 {pages.map((page, idx) => {
                                     return (
                                         <ListItem
+                                            key={page}
                                             sx={{
-                                                backgroundColor: selectedDrawerItem === pages[idx] ? colors.secondary : "white",
+                                                backgroundColor: props.currentTab === pages[idx] ? colors.secondary : "white",
                                                 cursor: "pointer",
                                                 color: colors.tertiary,
                                                 marginY: "10px",
                                                 paddingLeft: "20px",
                                             }}
-                                            onClick={handleDrawerItemClick.bind(this, page)}
+                                            onClick={() => handleDrawerItemClick(page)}
+                                            component={RouterLink}
+                                            to={`/${page}`}
                                         >
                                             {pageTitles[idx]}
                                         </ListItem>
@@ -134,9 +134,10 @@ const Header = (props: HeaderProps) => {
                             {pages.map((page, idx) => {
                                 return (
                                     <Tab
+                                        key={page}
                                         label={pageTitles[idx]}
-                                        component={Link}
-                                        to={page}
+                                        component={RouterLink}
+                                        to={`/${page}`}
                                         sx={{
                                             '&:hover': {
                                                 color: colors.tertiary,
@@ -150,9 +151,7 @@ const Header = (props: HeaderProps) => {
                                             },
                                             color: colors.textLight,
                                         }}
-                                        onClick={() => props.onClick(page)}
-                                    >
-                                    </Tab>
+                                    />
                                 )
                             })}
                         </Tabs>

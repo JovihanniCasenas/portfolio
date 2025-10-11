@@ -1,5 +1,6 @@
 import { Gmail, LinkedIn, GitHubLight } from "developer-icons"
 import { Grid2, Tooltip } from "@mui/material"
+import colors from "../../colors";
 
 interface ContactProps {
     isMobile: boolean;
@@ -44,6 +45,23 @@ const Contact = (props: ContactProps) => {
                     </Tooltip>
                 </Grid2>
             </Grid2>
+
+            <div className="skill-bar" style={{ textAlign: "left", padding: "20px 40px", marginTop: "30px" }}>
+                <div className="text-sm" style={{ margin: 0, color: colors.textDark }}>
+                    <h3 style={{ marginTop: "0px" }}>For Virtual Assistance inquiries</h3>
+                    <p>Email: {" "}
+                        <a
+                            href="mailto:askinfo.egs@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ fontWeight: 'normal', color: 'inherit', textDecoration: 'none' }}
+                        >
+                            askinfo.egs@gmail.com
+                        </a>
+                        </p>
+                    <p>Phone: +1 720-575-0579</p>
+                </div>
+            </div>
         </div>
     )
 }

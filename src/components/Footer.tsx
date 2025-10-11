@@ -1,10 +1,18 @@
 import { Tooltip } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
 interface FooterProps {
     onClick: (tab: string) => void
 }
 
 const Footer = (props: FooterProps) => {
+    const navigate = useNavigate()
+
+    const handleAstronautClick = () => {
+        navigate("/contact")
+        props.onClick("contact")
+    }
+
     return (
         <div style={{
             bottom: "0px",
@@ -33,7 +41,7 @@ const Footer = (props: FooterProps) => {
                             transform: "rotate(-18deg)",
                             cursor: "pointer",
                         }}
-                        onClick={() => props.onClick("contact")}
+                        onClick={handleAstronautClick}
                     />
                 </Tooltip>
             </div>

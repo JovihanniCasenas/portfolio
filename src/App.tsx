@@ -39,6 +39,34 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange)
+    switch (tabStr) {
+      case 'about':
+        document.title = 'About Me | Jovihanni Casenas'
+        navigate('/about')
+        break
+      case 'skillset':
+        document.title = 'Skillset | Jovihanni Casenas'
+        navigate('/skillset')
+        break
+      case 'projects':
+        document.title = 'Projects | Jovihanni Casenas'
+        navigate('/projects')
+        break
+      case 'work':
+        document.title = 'Work Experience | Jovihanni Casenas'
+        navigate('/work')
+        break
+      case 'education':
+        document.title = 'Education | Jovihanni Casenas'
+        navigate('/education')
+        break
+      case 'contact':
+        document.title = 'Contact | Jovihanni Casenas'
+        navigate('/contact')
+        break
+      default:
+        document.title = 'Jovihanni Casenas | Software Engineer and Virtual Assistant'
+    }
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange)
     }

@@ -75,26 +75,44 @@ const DesignBranding = () => {
             The design features a clean and modern layout that highlights key information, including my skills, experience, and service offerings.
             The design process involved selecting a layout that is easy to read and visually appealing, incorporating elements from my personal brand kit.
             The final one-pager serves as an effective marketing tool to attract potential clients, providing them with a quick snapshot of what I can offer.`,
+        },
+        {
+            key: "real-estate-just-listed",
+            title: "Real Estate Just Listed Email Campaign",
+            img: "assets/real-estate-just-listed.png",
+            description: `This real estate "Just Listed" email campaign was designed to promote new property listings.
+            The template features a visually appealing layout that highlights key details about the property, including images, and features.
+            The design process involved creating a layout that is easy to customize for different property listings, incorporating elements from my personal brand kit.
+            The final template provides a professional and eye-catching design that can help attract potential buyers and increase engagement.`,
         }
     ]
     return (
         <div>
-            {sections.map(section => (
+            {sections.map((section, idx) => (
                 <Grid2
                     container
-                    sx={{ marginBottom: "40px" }}
+                    sx={{ marginBottom: `${idx === sections.length - 1 ? '0' : '40px'}` }}
                     key={section.key}
                 >
                     <Grid2
                         size={{ xs: 12, sm: 12, md: 5, lg: 4, xl: 4 }}
-                        sx={{ paddingRight: "10px", paddingBottom: "20px" }}
+                        sx={{ paddingRight: "10px", paddingBottom: `${idx === sections.length - 1 ? '0' : '20px'}` }}
                     >
-                        <iframe
-                            src={section.link}
-                            allowFullScreen={true}
-                            title={section.title}
-                            style={{ border: 'none', width: '100%', height: '100%' }}
-                        ></iframe>
+                        {section.link && (
+                            <iframe
+                                src={section.link}
+                                allowFullScreen={true}
+                                title={section.title}
+                                style={{ border: 'none', width: '100%', height: '100%' }}
+                            />
+                        )}
+                        {section.img && (
+                            <img
+                                src={section.img}
+                                alt={section.title}
+                                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                            />
+                        )}
                     </Grid2>
                     <Grid2 size={{ xs: 12, sm: 12, md: 7, lg: 8, xl: 8 }}>
                         <div>

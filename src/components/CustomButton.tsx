@@ -1,14 +1,17 @@
 import { Button, ButtonProps, SxProps, Theme } from "@mui/material"
 import colors from "../colors"
 
-interface CustomButtonProps extends ButtonProps {
+interface CustomButtonProps extends Omit<ButtonProps, "variant"> {
     text?: string;
+    customVariant?: "solid" | "outlined" | "text";
+    children?: React.ReactNode;
     sx?: SxProps<Theme>;
 }
 
-const CustomButton = ({ text, sx = {}, ...otherProps }: CustomButtonProps) => {
+const CustomButton = ({ text, customVariant="solid", children, sx = {}, ...otherProps }: CustomButtonProps) => {
+    const muiVariant = customVariant === "solid" ? "contained" : "outlined";
     const customStyle = {
-        backgroundColor: colors.secondary,
+        backgroundColor: customVariant === "solid" ? colors.secondary : "transparent",
         borderRadius: "100px",
         padding: "18px",
         margin: "10px",
@@ -21,13 +24,14 @@ const CustomButton = ({ text, sx = {}, ...otherProps }: CustomButtonProps) => {
             backgroundColor: colors.tertiary,
             borderRadius: "100px",
         },
-        color: colors.tertiary,
+        color: customVariant === "solid" ? colors.tertiary : colors.textLight,
+        border: customVariant === "outlined" ? `2px solid ${colors.secondary}` : "none",
         ...(sx as object) // Properly merge with sx prop
     }
     
     return (
-        <Button sx={customStyle} {...otherProps}>
-            {text || "Click Me"}
+        <Button variant={muiVariant} sx={customStyle} {...otherProps}>
+            {children ? children : text}
         </Button>
     )
 }

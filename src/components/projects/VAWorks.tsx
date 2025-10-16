@@ -1,13 +1,21 @@
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import colors from "../../colors"
-import DesignBranding from "./DesignBranding"
+import LogosBranding from "./LogosBranding"
+import SocialPost from "./SocialPost"
+import Brochure from "./Brochure"
+import Proposal from "./Proposal"
+import EmailCampaign from "./EmailCampaign"
 import CreativeWriting from "./CreativeWriting"
 import VATechSection from "./VATechSection"
 
 const VAWorks = () => {
     const sections = [
-        { key: "design-branding", title: "Design and Branding", content: <DesignBranding /> },
+        { key: "design-branding", title: "Logos and Brand Kit", content: <LogosBranding /> },
+        { key: "social-media-posts", title: "Social Media Posts", content: <SocialPost /> },
+        { key: "brochure", title: "Brochure and One-Pager", content: <Brochure /> },
+        { key: "proposals", title: "Proposals", content: <Proposal /> },
+        { key: "email-campaigns", title: "Email Campaigns", content: <EmailCampaign /> },
         { key: "creative-writing", title: "Creative Writing", content: <CreativeWriting /> },
         { key: "tech-analytics", title: "Tech / Analytics / Systems", content: <VATechSection /> },
     ]

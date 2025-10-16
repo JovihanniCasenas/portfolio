@@ -114,7 +114,7 @@ const DesignBranding = () => {
                                 src={section.link}
                                 allowFullScreen={true}
                                 title={section.title}
-                                style={{ border: 'none', width: '100%', height: '100%' }}
+                                style={{ border: 'none', width: '100%', height: '100%', borderRadius: '8px' }}
                             />
                         )}
                         {section.img && (

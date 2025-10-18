@@ -1,14 +1,13 @@
 import { Grid2 } from "@mui/material"
-import CustomButton from "../CustomButton"
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import PreviewCard from "./PreviewCard"
 
 const LogosBranding = () => {
     const sections = [
         {
             key: "perlas-realty-logo",
             title: "Perlas Realty Logo",
-            link: "https://www.canva.com/design/DAG1K7WOnlw/ZUqIATKp9xnumliVQpGlEQ/view?embed",
-            canvaLink: "https://www.canva.com/design/DAG1K7WOnlw/L_7qPCJsgQTv7RwKaZVUSA/edit?utm_content=DAG1K7WOnlw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+            link: "https://www.canva.com/design/DAG1K7WOnlw/ZUqIATKp9xnumliVQpGlEQ/view?utm_content=DAG1K7WOnlw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8fa49607be",
+            imgSrc: "assets/designs/perlas.png",
             description: `This logo was created for Perlas Realty, a fictional real estate company.
             Perlas, the Filipino word for pearl, pays homage to the Philippines - the Pearl of
             the Orient Sea. The design features a pearl motif, symbolizing elegance and sophistication.
@@ -19,8 +18,8 @@ const LogosBranding = () => {
         {
             key: "jacaranda-realty-logo",
             title: "Jacaranda Realty Logo",
-            link: "https://www.canva.com/design/DAG18sxBCCk/se0bM2Hddls0opGyZPMlGA/view?embed",
-            canvaLink: "https://www.canva.com/design/DAG18sxBCCk/cYCxEg22Jcf3ikP7n6UJpw/edit?utm_content=DAG18sxBCCk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+            link: "https://www.canva.com/design/DAG18sxBCCk/se0bM2Hddls0opGyZPMlGA/view?utm_content=DAG18sxBCCk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h15bd0db3b1",
+            imgSrc: "assets/designs/jacaranda.png",
             description: `This logo was created for Jacaranda Realty, a fictional real estate company that I fictionally own.
             The jacaranda tree is known for its vibrant purple flowers, symbolizing beauty and growth. I also chose this name due to its same initial as my own name, Jovi.
             The design features a segment of a jacaranda flower, representing the company's commitment to helping clients find their dream homes.`
@@ -28,8 +27,8 @@ const LogosBranding = () => {
         {
             key: "wondererxwanderer-brand-kit",
             title: "wondererxwanderer Brand Kit",
-            link: "https://www.canva.com/design/DAG1CE-LzQg/hbJrNnHk5LHaskI0hFs92Q/view?embed",
-            canvaLink: "https://www.canva.com/design/DAG1CE-LzQg/hVfQ3Ted1T6gaybCvqtflQ/edit?utm_content=DAG1CE-LzQg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+            link: "https://www.canva.com/design/DAG1CE-LzQg/hbJrNnHk5LHaskI0hFs92Q/view?utm_content=DAG1CE-LzQg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7973615f35",
+            imgSrc: "assets/designs/wxw.png",
             description: `This brand kit was developed for wondererxwanderer, a personal blog dedicated to creative writing.
             The brand kit includes a logo, color palette, typography guidelines, and other visual elements that reflect the blog's identity.
             The design process involved selecting colors and fonts that evoke a sense of creativity and inspiration, aligning with the blog's purpose of sharing imaginative stories and ideas.
@@ -38,8 +37,8 @@ const LogosBranding = () => {
         {
             key: "jovi-brand-kit",
             title: "Jovi Brand Kit",
-            link: "https://www.canva.com/design/DAG1elW_DOg/jakT-4b2mnDn-llogGGw8w/view?embed",
-            canvaLink: "https://www.canva.com/design/DAG1elW_DOg/qDhhMPsKoVPwnvBXe0x8SQ/edit?utm_content=DAG1elW_DOg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+            link: "https://www.canva.com/design/DAG1elW_DOg/jakT-4b2mnDn-llogGGw8w/view?utm_content=DAG1elW_DOg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h275f3ff420",
+            imgSrc: "assets/designs/jovi.png",
             description: `This brand kit was created for Jovi, a personal brand that represents my VA identity.
             The brand kit includes a logo, color scheme, typography, and other design elements that reflect my personality and values.
             The design process involved selecting colors and fonts that convey professionalism, creativity, and approachability.
@@ -48,46 +47,25 @@ const LogosBranding = () => {
     ]
     return (
         <div>
-            {sections.map((section, idx) => (
-                <Grid2
-                    container
-                    sx={{ marginBottom: `${idx === sections.length - 1 ? '0' : '40px'}` }}
-                    key={section.key}
-                >
+            <Grid2
+                container
+            >
+                {sections.map((section, idx) => (
                     <Grid2
-                        size={{ xs: 12, sm: 12, md: 5, lg: 4, xl: 4 }}
-                        sx={{ paddingRight: "10px", paddingBottom: `${idx === sections.length - 1 ? '0' : '20px'}` }}
+                        size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }}
+                        sx={{ paddingRight: "4px", paddingBottom: `${idx === sections.length - 1 ? '0' : '4px'}` }}
                     >
-                        {section.link && (
-                            <iframe
-                                src={section.link}
-                                allowFullScreen={true}
-                                title={section.title}
-                                style={{ border: 'none', width: '100%', height: '100%', borderRadius: '8px' }}
-                            />
-                        )}
+                        <PreviewCard
+                            key={section.key}
+                            title={section.title}
+                            description={section.description}
+                            link={section.link}
+                            imgSrc={section.imgSrc}
+                        />
                     </Grid2>
-                    <Grid2 size={{ xs: 12, sm: 12, md: 7, lg: 8, xl: 8 }}>
-                        <div>
-                            <h4 style={{ marginTop: "0px" }}>{section.title}</h4>
-                            <p>
-                                {section.description}
-                            </p>
-                            {section.canvaLink && (
-                                <CustomButton
-                                    customVariant="text"
-                                    onClick={() => window.open(section.canvaLink, '_blank')}
-                                    size="small"
-                                    sx={{ textTransform: 'none', marginTop: '10px' }}
-                                >
-                                    View on Canva
-                                    <OpenInNewIcon fontSize="small" sx={{ marginLeft: '8px' }} />
-                                </CustomButton>
-                            )}
-                        </div>
-                    </Grid2>
-                </Grid2>
-            ))}
+                ))}
+
+            </Grid2>
         </div>
     )
 }

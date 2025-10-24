@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom"
+import { useRouter } from "next/navigation"
 import CustomButton from "./CustomButton"
 
 const ContactCTA = () => {
-    const navigate = useNavigate()
+    const router = useRouter()
     return (
         <CustomButton
             text="Let's Connect"
-            onClick={() => navigate("/contact")}
+            onClick={() => router.push("/contact")}
         />
     )
 }

@@ -1,5 +1,5 @@
 import { Tabs, Tab } from "@mui/material"
-import colors from "../colors";
+import colors from "@/utils/colors"
 
 interface CareerTabsProps {
     tabValue: string;

@@ -1,5 +1,5 @@
 import { Button, ButtonProps, SxProps, Theme } from "@mui/material"
-import colors from "../colors"
+import colors from "@/utils/colors"
 
 interface CustomButtonProps extends Omit<ButtonProps, "variant"> {
     text?: string;

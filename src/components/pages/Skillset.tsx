@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import Engineering from "../skillset/Engineering"
 import VirtualAssistance from "../skillset/VirtualAssistance"

@@ -1,14 +1,14 @@
-import { useNavigate } from "react-router-dom"
+"use client"
+
+import { useRouter } from "next/navigation"
 import { Stack } from "@mui/material"
 import CustomButton from "../CustomButton"
 import ContactCTA from "../ContactCTA"
+import useIsMobile from "../../hooks/useIsMobile"
 
-interface AboutMeProps {
-    isMobile: boolean;
-}
-
-const AboutMe = (props: AboutMeProps) => {
-    const navigate = useNavigate();
+const AboutMe = () => {
+    const router = useRouter();
+    const isMobile = useIsMobile();
 
     return (
         <div className="page-wrapper">
@@ -30,7 +30,7 @@ const AboutMe = (props: AboutMeProps) => {
                         <p
                             className="text-md"
                             style={{
-                                maxWidth: props.isMobile
+                                maxWidth: isMobile
                                     ? "90vw"
                                     : "50vw",
                                 lineHeight: "1.5",
@@ -45,7 +45,7 @@ const AboutMe = (props: AboutMeProps) => {
                     <div style={{display: "flex", justifyContent: "center", paddingTop: "30px", paddingBottom: "30px"}}>
                         <CustomButton
                             text="View My Sample Work"
-                            onClick={() => navigate("/projects")}
+                            onClick={() => router.push("/projects")}
                         />
                         <ContactCTA />
                     </div>

@@ -1,5 +1,5 @@
 import { Card, CardMedia, Tooltip } from "@mui/material"
-import colors from "../../colors"
+import colors from "@/utils/colors"
 
 interface PreviewCardProps {
     children?: React.ReactNode,

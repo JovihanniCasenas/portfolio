@@ -1,11 +1,11 @@
-import { Avatar, Grid2 } from "@mui/material"
-import colors from "../../colors"
+import { Avatar, Grid } from "@mui/material"
+import colors from "@/utils/colors"
 
 const Systems = () => {
     return (
         <>
-        <Grid2 justifyContent={"center"} container>
-                <Grid2
+        <Grid justifyContent={"center"} container>
+                <Grid
                     size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
                     justifyContent={"center"}
                     display={"flex"}
@@ -27,9 +27,9 @@ const Systems = () => {
                             </p>
                         </div>
                     </a>
-                </Grid2>
+                </Grid>
 
-                <Grid2
+                <Grid
                     size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
                     justifyContent={"center"}
                     display={"flex"}
@@ -52,9 +52,9 @@ const Systems = () => {
                             </p>
                         </div>
                     </a>
-                </Grid2>
+                </Grid>
 
-                <Grid2
+                <Grid
                     size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
                     justifyContent={"center"}
                     display={"flex"}
@@ -74,9 +74,9 @@ const Systems = () => {
                             </p>
                         </div>
                     </a>
-                </Grid2>
+                </Grid>
 
-                <Grid2
+                <Grid
                     size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
                     justifyContent={"center"}
                     display={"flex"}
@@ -96,9 +96,9 @@ const Systems = () => {
                             </p>
                         </div>
                     </a>
-                </Grid2>
+                </Grid>
 
-                <Grid2
+                <Grid
                     size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
                     justifyContent={"center"}
                     display={"flex"}
@@ -120,8 +120,8 @@ const Systems = () => {
                             </p>
                         </div>
                     </a>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
             <div style={{ height: "30px" }}></div>
         </>
     )

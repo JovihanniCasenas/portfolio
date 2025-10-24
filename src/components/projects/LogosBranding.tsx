@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material"
+import { Grid } from "@mui/material"
 import PreviewCard from "./PreviewCard"
 
 const LogosBranding = () => {
@@ -16,13 +16,10 @@ const LogosBranding = () => {
             Finally, the logo was polished to reflect the professionalism and trustworthiness of the real estate industry.`,
         },
         {
-            key: "jacaranda-realty-logo",
-            title: "Jacaranda Realty Logo",
-            link: "https://www.canva.com/design/DAG18sxBCCk/se0bM2Hddls0opGyZPMlGA/view?utm_content=DAG18sxBCCk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h15bd0db3b1",
-            imgSrc: "assets/designs/jacaranda.png",
-            description: `This logo was created for Jacaranda Realty, a fictional real estate company that I fictionally own.
-            The jacaranda tree is known for its vibrant purple flowers, symbolizing beauty and growth. I also chose this name due to its same initial as my own name, Jovi.
-            The design features a segment of a jacaranda flower, representing the company's commitment to helping clients find their dream homes.`
+            key: "jovi-realty-logo",
+            title: "Jovihanni Realty Logo",
+            link: "https://www.canva.com/design/DAG2nlmRFE4/6teDDSbvJJIE0K7M8bkjZA/view?utm_content=DAG2nlmRFE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h36caf432e7",
+            imgSrc: "assets/designs/jovi-real-estate.png",
         },
         {
             key: "wondererxwanderer-brand-kit",
@@ -47,11 +44,12 @@ const LogosBranding = () => {
     ]
     return (
         <div>
-            <Grid2
+            <Grid
                 container
             >
                 {sections.map((section, idx) => (
-                    <Grid2
+                    <Grid
+                        key={section.key}
                         size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }}
                         sx={{ paddingRight: "4px", paddingBottom: `${idx === sections.length - 1 ? '0' : '4px'}` }}
                     >
@@ -62,10 +60,10 @@ const LogosBranding = () => {
                             link={section.link}
                             imgSrc={section.imgSrc}
                         />
-                    </Grid2>
+                    </Grid>
                 ))}
 
-            </Grid2>
+            </Grid>
         </div>
     )
 }

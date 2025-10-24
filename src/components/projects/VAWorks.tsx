@@ -1,6 +1,6 @@
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import colors from "../../colors"
+import colors from "@/utils/colors"
 import LogosBranding from "./LogosBranding"
 import SocialPost from "./SocialPost"
 import Brochure from "./Brochure"

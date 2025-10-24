@@ -1,4 +1,4 @@
-import { Grid2, Tooltip } from "@mui/material"
+import { Grid, Tooltip } from "@mui/material"
 import {
     Go, TypeScript, PostgreSQL, Prisma, GraphQL,
     VueJs, Pinia, React, ChakraUI, MaterialUI, NextJs,
@@ -10,100 +10,100 @@ const Engineering = () => {
     return (
         <>
             <p className="text-md">Backend technologies</p>
-            <Grid2 container className="skill-bar" spacing={2}>
-                <Grid2 className="skill-bar-item">
+            <Grid container className="skill-bar" spacing={2}>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Go">
                         <Go />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Typescript">
                         <TypeScript />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="PostgresSQL">
                         <PostgreSQL />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Prisma">
                         <Prisma />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="GraphQL">
                         <GraphQL />
                     </Tooltip>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
 
             <p className="text-md">Frontend technologies</p>
-            <Grid2 container className="skill-bar" spacing={2}>
-                <Grid2 className="skill-bar-item">
+            <Grid container className="skill-bar" spacing={2}>
+                <Grid className="skill-bar-item">
                     <Tooltip title="VueJs / Vuetify">
                         <VueJs />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Pinia">
                         <Pinia />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="React">
                         <React />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="ChakraUI">
                         <ChakraUI />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="MaterialUI">
                         <MaterialUI />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Typescript">
                         <TypeScript />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="NextJs">
                         <NextJs />
                     </Tooltip>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
 
             <p className="text-md">Cloud Service Providers</p>
-            <Grid2 container className="skill-bar" spacing={2}>
-                <Grid2 className="skill-bar-item">
+            <Grid container className="skill-bar" spacing={2}>
+                <Grid className="skill-bar-item">
                     <Tooltip title="AWS">
                         <AWS />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="GCP">
                         <GoogleCloud />
                     </Tooltip>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
 
             <p className="text-md">Integrations</p>
-            <Grid2 container className="skill-bar" spacing={2}>
-                <Grid2 className="skill-bar-item">
+            <Grid container className="skill-bar" spacing={2}>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Slack">
                         <Slack />
                     </Tooltip>
-                </Grid2>
-                <Grid2 className="skill-bar-item">
+                </Grid>
+                <Grid className="skill-bar-item">
                     <Tooltip title="Auth0">
                         <Auth0 />
                     </Tooltip>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
         </>
     )
 }

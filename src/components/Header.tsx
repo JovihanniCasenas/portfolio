@@ -1,30 +1,31 @@
-import { useState, useEffect } from "react";
-import { AppBar, Avatar, Toolbar, Box, Drawer, IconButton, List, ListItem, Tabs, Tab } from "@mui/material"
-import { Close, Menu } from "@mui/icons-material";
-import colors from "../colors"
-import { Link as RouterLink } from "react-router-dom"
+"use client"
 
-interface HeaderProps {
-    isMobile: boolean;
-    onClick: (tab: string) => void;
-    currentTab: string;
-}
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { useRouter } from "next/navigation"
+import useIsMobile from "@/hooks/useIsMobile"
+import { Avatar, Toolbar, Box, Drawer, IconButton, List, ListItem, Tabs, Tab } from "@mui/material"
+import { Close, Menu } from "@mui/icons-material"
+import colors from "@/utils/colors"
 
-const Header = (props: HeaderProps) => {
+const Header = () => {
+    const isMobile = useIsMobile()
+    const pathname = usePathname()
+    const router = useRouter()
     const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
     const [tabVal, setTabVal] = useState<number>(0)
 
-    const pages = ['about', 'skillset', 'work', 'projects', 'education', 'contact']
+    const pages = ['', 'skillset', 'work', 'projects', 'education', 'contact']
     const pageTitles = ['About Me', 'Skillset', 'Work Experience', 'Projects', 'Education', 'Contact Me']
 
     // Update tab value when route changes
     useEffect(() => {
-        const index = pages.indexOf(props.currentTab)
+        const index = pages.indexOf(pathname.replace("/", ""))
         setTabVal(index >= 0 ? index : 0)
-    }, [props.currentTab, pages])
+    }, [pathname, pages])
 
     const handleClick = () => {
-        props.onClick("about")
+        router.push('/')
     };
 
     const handleClose = () => {
@@ -32,19 +33,26 @@ const Header = (props: HeaderProps) => {
     };
 
     const handleDrawerItemClick = (page: string) => {
-        props.onClick(page)
+        router.push(`/${page}`)
         setIsDrawerOpen(false)
     }
 
     const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
         setTabVal(newValue);
-        props.onClick(pages[newValue])
+        router.push(`/${pages[newValue]}`)
     };
 
     return (
         <>
-            <AppBar position="sticky" sx={{ background: "transparent", boxShadow: "none", padding: "10px", width: '100vw', mb: "10px" }}>
-                <Toolbar style={{ justifyContent: props.isMobile ? "space-between" : "center" }}>
+            <div
+                style={{
+                    background: "transparent",
+                    padding: "10px",
+                    width: '100%',
+                    marginBottom: "10px",
+                }}
+            >
+                <Toolbar style={{ justifyContent: isMobile ? "space-between" : "center" }}>
                     <Avatar
                         alt="logo"
                         src="/assets/j-logo.png"
@@ -52,7 +60,7 @@ const Header = (props: HeaderProps) => {
                         onClick={handleClick}
                     />
 
-                    {props.isMobile && (
+                    {isMobile && (
                         <IconButton
                             aria-label="menu"
                             size="large"
@@ -103,15 +111,13 @@ const Header = (props: HeaderProps) => {
                                         <ListItem
                                             key={page}
                                             sx={{
-                                                backgroundColor: props.currentTab === pages[idx] ? colors.secondary : "white",
+                                                backgroundColor: tabVal === idx ? colors.secondary : "white",
                                                 cursor: "pointer",
                                                 color: colors.tertiary,
                                                 marginY: "10px",
                                                 paddingLeft: "20px",
                                             }}
                                             onClick={() => handleDrawerItemClick(page)}
-                                            component={RouterLink}
-                                            to={`/${page}`}
                                         >
                                             {pageTitles[idx]}
                                         </ListItem>
@@ -121,7 +127,7 @@ const Header = (props: HeaderProps) => {
                         </Box>
                     </Drawer>
 
-                    {!props.isMobile && (
+                    {!isMobile && (
                         <Tabs
                             value={tabVal}
                             onChange={handleTabChange}
@@ -136,8 +142,6 @@ const Header = (props: HeaderProps) => {
                                     <Tab
                                         key={page}
                                         label={pageTitles[idx]}
-                                        component={RouterLink}
-                                        to={`/${page}`}
                                         sx={{
                                             '&:hover': {
                                                 color: colors.tertiary,
@@ -157,7 +161,7 @@ const Header = (props: HeaderProps) => {
                         </Tabs>
                     )}
                 </Toolbar>
-            </AppBar>
+            </div>
         </>
     )
 }

@@ -1,4 +1,6 @@
-import colors from "../../colors"
+"use client"
+
+import colors from "@/utils/colors"
 
 const Education = () => {
     return (

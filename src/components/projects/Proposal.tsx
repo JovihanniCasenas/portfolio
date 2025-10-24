@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material"
+import { Grid } from "@mui/material"
 import PreviewCard from "./PreviewCard"
 
 const Proposal = () => {
@@ -18,11 +18,12 @@ const Proposal = () => {
     ]
     return (
         <div>
-            <Grid2
+            <Grid
                 container
             >
                 {sections.map((section, idx) => (
-                    <Grid2
+                    <Grid
+                        key={section.key}
                         size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }}
                         sx={{ paddingRight: "4px", paddingBottom: `${idx === sections.length - 1 ? '0' : '4px'}` }}
                     >
@@ -32,9 +33,9 @@ const Proposal = () => {
                             link={section.link}
                             imgSrc={section.imgSrc}
                         />
-                    </Grid2>
+                    </Grid>
                 ))}
-            </Grid2>
+            </Grid>
         </div>
     )
 }

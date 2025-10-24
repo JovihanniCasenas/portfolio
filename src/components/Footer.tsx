@@ -1,16 +1,13 @@
+"use client"
+
 import { Tooltip } from "@mui/material"
-import { useNavigate } from "react-router-dom"
+import { useRouter } from "next/navigation"
 
-interface FooterProps {
-    onClick: (tab: string) => void
-}
-
-const Footer = (props: FooterProps) => {
-    const navigate = useNavigate()
+const Footer = () => {
+    const router = useRouter()
 
     const handleAstronautClick = () => {
-        navigate("/contact")
-        props.onClick("contact")
+        router.push("/contact")
     }
 
     return (

@@ -1,26 +1,27 @@
+"use client"
+
+import useIsMobile from "@/hooks/useIsMobile"
 import { Gmail, LinkedIn, GitHubLight } from "developer-icons"
-import { Grid2, Tooltip } from "@mui/material"
-import colors from "../../colors";
+import { Grid, Tooltip } from "@mui/material"
+import colors from "@/utils/colors"
 
-interface ContactProps {
-    isMobile: boolean;
-}
+const Contact = () => {
+    const isMobile = useIsMobile()
 
-const Contact = (props: ContactProps) => {
     return (
         <div className="page-wrapper">
             <h1 id="contact">Contact Me</h1>
 
-            <Grid2 container spacing={2} width={props.isMobile ? "90vw" : "50vw"} justifyContent="center" textAlign={"center"}>
-                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>
+            <Grid container spacing={2} width={isMobile ? "90vw" : "50vw"} justifyContent="center" textAlign={"center"}>
+                <Grid size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }} justifyContent={"center"}>
                     <Tooltip title="Email">
                         <a href="mailto:casenasjovihanni@gmail.com">
                             <Gmail />
                         </a>
                     </Tooltip>
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                <Grid size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
 
                     <Tooltip title="LinkedIn">
                         <a
@@ -31,9 +32,9 @@ const Contact = (props: ContactProps) => {
                             <LinkedIn />
                         </a>
                     </Tooltip>
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                <Grid size={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
                     <Tooltip title="GitHub">
                         <a
                             href="https://github.com/JovihanniCasenas"
@@ -43,8 +44,8 @@ const Contact = (props: ContactProps) => {
                             <GitHubLight />
                         </a>
                     </Tooltip>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
 
             <div className="skill-bar" style={{ textAlign: "left", padding: "20px 40px", marginTop: "30px" }}>
                 <div className="text-sm" style={{ margin: 0, color: colors.textDark }}>

@@ -1,42 +1,38 @@
-import { useState } from 'react';
-import './Stars.css';
+import './Stars.css'
 
 interface StarData {
-  id: number;
-  size: string;
-  left: string;
-  top: string;
-  duration: string;
-  delay: string;
-  opacity: string;
+  id: number
+  size: string
+  left: string
+  top: string
+  duration: string
+  delay: string
+  opacity: string
 }
 
 interface StarsProps {
-  count?: number;
+  count?: number
 }
 
 // Create this outside the component to ensure it's only generated once
-let generatedStars: StarData[] | null = null;
+let generatedStars: StarData[] | null = null
 
 const Stars = ({ count = 100 }: StarsProps) => {
-  const [stars] = useState<StarData[]>(() => {
+  const getStars = (): StarData[] => {
     // Only generate stars once across all renders and component mounts
     if (generatedStars) {
-      return generatedStars;
+      return generatedStars
     }
-    
-    const newStars: StarData[] = [];
-    
+    const newStars: StarData[] = []
     for (let i = 0; i < count; i++) {
       // Randomly assign star size
-      const size = Math.random();
-      let sizeClass = 'star';
+      const size = Math.random()
+      let sizeClass = 'star'
       if (size > 0.9) {
-        sizeClass = 'star large';
+        sizeClass = 'star large'
       } else if (size > 0.6) {
-        sizeClass = 'star medium';
+        sizeClass = 'star medium'
       }
-      
       const star: StarData = {
         id: i,
         size: sizeClass,
@@ -45,17 +41,16 @@ const Stars = ({ count = 100 }: StarsProps) => {
         duration: `${3 + Math.random() * 7}s`,
         delay: `${Math.random() * 5}s`,
         opacity: `${0.5 + Math.random() * 0.5}`,
-      };
-      
-      newStars.push(star);
+      }
+      newStars.push(star)
     }
-    
-    generatedStars = newStars;
-    return newStars;
-  });
-  
+    generatedStars = newStars
+    return newStars
+  }
+
+  const stars = getStars()
+
   // We don't need the useEffect anymore as we're using React's rendering system
-  
   return (
     <div 
       style={{ 
@@ -83,7 +78,7 @@ const Stars = ({ count = 100 }: StarsProps) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Stars;
+export default Stars

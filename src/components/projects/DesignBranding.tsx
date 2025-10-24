@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material"
+import { Grid } from "@mui/material"
 import CustomButton from "../CustomButton"
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
@@ -100,12 +100,12 @@ const DesignBranding = () => {
     return (
         <div>
             {sections.map((section, idx) => (
-                <Grid2
+                <Grid
                     container
                     sx={{ marginBottom: `${idx === sections.length - 1 ? '0' : '40px'}` }}
                     key={section.key}
                 >
-                    <Grid2
+                    <Grid
                         size={{ xs: 12, sm: 12, md: 5, lg: 4, xl: 4 }}
                         sx={{ paddingRight: "10px", paddingBottom: `${idx === sections.length - 1 ? '0' : '20px'}` }}
                     >
@@ -124,8 +124,8 @@ const DesignBranding = () => {
                                 style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                             />
                         )}
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, sm: 12, md: 7, lg: 8, xl: 8 }}>
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 12, md: 7, lg: 8, xl: 8 }}>
                         <div>
                             <h4 style={{ marginTop: "0px" }}>{section.title}</h4>
                             <p>
@@ -143,8 +143,8 @@ const DesignBranding = () => {
                                 </CustomButton>
                             )}
                         </div>
-                    </Grid2>
-                </Grid2>
+                    </Grid>
+                </Grid>
             ))}
         </div>
     )

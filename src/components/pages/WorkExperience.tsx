@@ -1,3 +1,5 @@
+"use client"
+
 const WorkExperience = () => {
     return (
         <div className="page-wrapper">

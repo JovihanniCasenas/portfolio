@@ -3,9 +3,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import colors from "@/utils/colors"
 import LogosBranding from "./LogosBranding"
 import SocialPost from "./SocialPost"
+import Reels from "./Reels"
 import Brochure from "./Brochure"
 import Proposal from "./Proposal"
+import Packets from "./Packets"
 import EmailCampaign from "./EmailCampaign"
+import Websites from "./Websites"
 import CreativeWriting from "./CreativeWriting"
 import VATechSection from "./VATechSection"
 
@@ -13,9 +16,12 @@ const VAWorks = () => {
     const sections = [
         { key: "design-branding", title: "Logos and Brand Kit", content: <LogosBranding /> },
         { key: "social-media-posts", title: "Social Media Posts", content: <SocialPost /> },
+        { key: "reels-videos", title: "Reels and Videos", content: <Reels /> },
         { key: "brochure", title: "Brochure and One-Pager", content: <Brochure /> },
         { key: "proposals", title: "Proposals", content: <Proposal /> },
+        { key: "packets", title: "Real Estate Marketing Packets", content: <Packets /> },
         { key: "email-campaigns", title: "Email Campaigns", content: <EmailCampaign /> },
+        { key: "websites", title: "Websites", content: <Websites /> },
         { key: "creative-writing", title: "Creative Writing", content: <CreativeWriting /> },
         { key: "tech-analytics", title: "Tech / Analytics / Systems", content: <VATechSection /> },
     ]

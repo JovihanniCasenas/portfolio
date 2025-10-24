@@ -5,7 +5,7 @@ const Scripts = () => {
     return (
         <Grid container spacing={2} style={{ marginBottom: "20px" }}>
             <Grid size={{ xs: 12, sm: 12, md: 6 }}>
-                <img src="/assets/sheets-script.png" alt="Google Sheets Script" style={{ maxWidth: "100%", height: "auto", borderRadius: '8px' }} />
+                <img src="/assets/tech/sheets-script.png" alt="Google Sheets Script" style={{ maxWidth: "100%", height: "auto", borderRadius: '8px' }} />
             </Grid>
             <TextWrapper>
                 Integrated the above Google Sheets script to automate counting of cells of specific colors

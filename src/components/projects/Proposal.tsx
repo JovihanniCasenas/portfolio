@@ -14,6 +14,12 @@ const Proposal = () => {
             title: "Sample 36 Touches Proposal",
             link: "https://www.canva.com/design/DAG2JKyzAaA/6kbvmE4jqWVv0B3qNEnN2g/view?utm_content=DAG2JKyzAaA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6b78f7403",
             imgSrc: "assets/designs/proposals/36-touches.png",
+        },
+        {
+            key: "wfg-proposal",
+            title: "WFG Social Media Strategy Proposal",
+            link: "https://www.canva.com/design/DAG2WNobAvM/Yd4V53Wh5uSxwLsOIg1xtA/view?utm_content=DAG2WNobAvM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h81877615c0",
+            imgSrc: "assets/designs/proposals/wfg-proposal.png",
         }
     ]
     return (

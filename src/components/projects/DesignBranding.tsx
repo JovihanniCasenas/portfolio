@@ -95,7 +95,7 @@ const DesignBranding = () => {
             The template features a visually appealing layout that highlights key details about the property, including images, and features.
             The design process involved creating a layout that is easy to customize for different property listings, incorporating elements from my personal brand kit.
             The final template provides a professional and eye-catching design that can help attract potential buyers and increase engagement.`,
-        }
+        },
     ]
     return (
         <div>

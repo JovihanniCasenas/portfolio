@@ -59,6 +59,7 @@ const LogosBranding = () => {
                             description={section.description}
                             link={section.link}
                             imgSrc={section.imgSrc}
+                            fit="cover"
                         />
                     </Grid>
                 ))}

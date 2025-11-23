@@ -6,7 +6,7 @@ const CreativeWriting = () => {
             <span>Sneak a peek to my thoughts at&nbsp;</span>
             <h3 style={{ margin: 0, padding: 0 }}>
                 <a
-                    href="https://wondererxwanderer.netlify.app"
+                    href="https://wondererxwanderer.jovihanni.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

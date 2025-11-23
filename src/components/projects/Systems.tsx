@@ -13,7 +13,7 @@ const Systems = () => {
                     margin={"20px"}
                 >
                     <a
-                        href="https://wondererxwanderer.netlify.app"
+                        href="https://wondererxwanderer.jovihanni.com"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

@@ -9,7 +9,7 @@ import ContactCTA from "../ContactCTA"
 // docs link to all available icons: https://xandemon.github.io/developer-icons/icons/All/
 
 const Skillset = () => {
-    const [tabValue, setTabValue] = useState("va")
+    const [tabValue, setTabValue] = useState("engineering")
     const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
         setTabValue(newValue)
     }

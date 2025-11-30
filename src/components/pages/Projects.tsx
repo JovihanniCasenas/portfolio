@@ -7,7 +7,7 @@ import VAWorks from "../projects/VAWorks"
 import ContactCTA from "../ContactCTA"
 
 const Projects = () => {
-    const [tabValue, setTabValue] = useState("va")
+    const [tabValue, setTabValue] = useState("engineering")
     const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
         setTabValue(newValue)
     }

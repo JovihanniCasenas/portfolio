@@ -1,11 +1,26 @@
 "use client"
+import colors from "@/utils/colors"
 
 const WorkExperience = () => {
+    const Alphaus = () => (
+        <a
+            href="https://alphaus.cloud"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <p
+            className="text-md"
+            style={{
+                color: colors.textLight,
+            }}
+            >Alphaus Inc.</p>
+        </a>
+    )
     return (
         <div className="page-wrapper">
             <h1 id="work">Work Experience</h1>
             <p className="text-lg">Dev Team Lead</p>
-            <p className="text-md">Alphaus Inc.</p>
+            <Alphaus />
             <p className="text-md">October 2024-present</p>
             <div
             style={{
@@ -17,7 +32,7 @@ const WorkExperience = () => {
             }}
             />
             <p className="text-lg">Junior Software Engineer</p>
-            <p className="text-md">Alphaus Inc.</p>
+            <Alphaus />
             <p className="text-md">August 2023-September 2024</p>
         </div>
     )

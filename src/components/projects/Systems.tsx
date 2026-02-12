@@ -84,6 +84,30 @@ const Systems = () => {
                     margin={"20px"}
                 >
                     <a
+                        href="https://bloomoji.jovihanni.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="project-card">
+                            <Avatar alt="Bloomoji" src="/assets/bloomoji.jpg" sx={{ width: 100, height: 100 }} />
+                            <p className="project-card-title text-lg" style={{ color: colors.tertiary }}>Bloomoji</p>
+                            <p className="project-card-content text-sm" style={{ color: colors.tertiary }}>
+                                A virtual emoji flower bouquet maker built with React and Next.js. 
+                                Users can create and customize their own bouquets, then share them with friends via unique links. 
+                                No user information is collected. Bouquet configuration is stored in the URL for easy sharing.
+                            </p>
+                        </div>
+                    </a>
+                </Grid>
+
+                <Grid
+                    size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 3 }}
+                    justifyContent={"center"}
+                    display={"flex"}
+                    padding={"20px"}
+                    margin={"20px"}
+                >
+                    <a
                         href="https://jovihannicasenas.github.io/high-low-game-web-app/#/"
                         target="_blank"
                         rel="noopener noreferrer"

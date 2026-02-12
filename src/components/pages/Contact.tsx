@@ -47,7 +47,8 @@ const Contact = () => {
                 </Grid>
             </Grid>
 
-            <div className="skill-bar" style={{ textAlign: "left", padding: "20px 40px", marginTop: "30px" }}>
+            {/* temporarily comment out EGS contact info */}
+            {/* <div className="skill-bar" style={{ textAlign: "left", padding: "20px 40px", marginTop: "30px" }}>
                 <div className="text-sm" style={{ margin: 0, color: colors.textDark }}>
                     <h3 style={{ marginTop: "0px" }}>For Virtual Assistance inquiries</h3>
                     <p>Email: {" "}
@@ -62,7 +63,7 @@ const Contact = () => {
                         </p>
                     <p>Phone: +1 720-575-0579</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

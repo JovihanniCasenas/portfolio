@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
-// import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import colors from "@/utils/colors"
-// import Header from "@/components/Header"
-// import Footer from "@/components/Footer"
 import Stars from "@/components/ui/Stars"
 
 const geistSans = Geist({
@@ -29,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <GoogleTagManager gtmId="GTM-N2TGBGJ8" /> */}
+      <GoogleTagManager gtmId="GTM-M6RJ6G3H" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -50,12 +48,7 @@ export default function RootLayout({
           }}
         >
           <Stars count={150} />
-          {/* <div style={{ position: "relative", zIndex: 1 }}>
-            <Header />
-          </div> */}
           <div style={{ minHeight: "calc(100vh - 270px)" }}>{children}</div>
-          {/* <div style={{ height: "10px" }}></div>
-          <Footer /> */}
         </div>
       </body>
     </html>

@@ -9,7 +9,6 @@ import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from "@mui/lab/TimelineOppositeContent"
 import TimelineDot from "@mui/lab/TimelineDot"
-import LaptopMacIcon from "@mui/icons-material/LaptopMac"
 import LaunchIcon from "@mui/icons-material/Launch"
 import Typography from "@mui/material/Typography"
 import HighlightHover from "@/components/ui/HighlightHover"

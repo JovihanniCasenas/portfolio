@@ -90,6 +90,7 @@ export default function WorkExperience() {
         rel="noopener noreferrer"
         className="mt-4 text-md flex items-center transition-transform hover:scale-103 origin-left"
         style={{ color: colors.secondary }}
+        id="open-resume-link"
       >
         View Full Resume
         <LaunchIcon className="ml-1" />

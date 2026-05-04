@@ -9,7 +9,6 @@ import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from "@mui/lab/TimelineOppositeContent"
 import TimelineDot from "@mui/lab/TimelineDot"
-import LaptopMacIcon from "@mui/icons-material/LaptopMac"
 import LaunchIcon from "@mui/icons-material/Launch"
 import Typography from "@mui/material/Typography"
 import HighlightHover from "@/components/ui/HighlightHover"
@@ -90,6 +89,7 @@ export default function WorkExperience() {
         rel="noopener noreferrer"
         className="mt-4 text-md flex items-center transition-transform hover:scale-103 origin-left"
         style={{ color: colors.secondary }}
+        id="open-resume-link"
       >
         View Full Resume
         <LaunchIcon className="ml-1" />

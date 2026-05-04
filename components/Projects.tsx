@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
 import Typography from "@mui/material/Typography"
 import CardActionArea from "@mui/material/CardActionArea"
+import LaunchIcon from "@mui/icons-material/Launch"
+import HighlightHover from "@/components/ui/HighlightHover"
 import colors from "@/utils/colors"
 
 function ProjectCards() {
@@ -65,26 +67,29 @@ function ProjectCards() {
             marginBottom: 2,
           }}
           key={index}
+          className="project-card"
+          id={`${item.title.toLowerCase().replace(/\s/g, "-")}`}
         >
+          <HighlightHover>
           <CardActionArea onClick={item.onClick}>
             <CardMedia
               component="img"
-              height="140"
               image={item.img}
               alt={item.title}
               sx={{
-                maxHeight: "200px",
+                height: "120px",
                 objectFit: "cover",
                 objectPosition: "top",
               }}
             />
             <CardContent sx={{ backgroundColor: "transparent" }}>
               <Typography gutterBottom variant="h5" component="div">
-                {item.title}
+                  {item.title} • <LaunchIcon />
               </Typography>
               <Typography variant="body2">{item.description}</Typography>
             </CardContent>
           </CardActionArea>
+          </HighlightHover>
         </Card>
       ))}
     </>

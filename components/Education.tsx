@@ -1,3 +1,6 @@
+import HighlightHover from "@/components/ui/HighlightHover"
+import LaunchIcon from "@mui/icons-material/Launch"
+
 export default function Education() {
   return (
     <div>
@@ -14,7 +17,10 @@ export default function Education() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p className="text-lg">FinOps Certified Pracitioner</p>
+        <HighlightHover>
+          FinOps Certified Pracitioner
+          <LaunchIcon className="ml-1" />
+        </HighlightHover>
       </a>
       <div className="mb-2" />
       <a
@@ -22,7 +28,10 @@ export default function Education() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p className="text-lg">Agile & Scrum 201 Training</p>
+        <HighlightHover>
+          Agile & Scrum 201 Training
+          <LaunchIcon className="ml-1" />
+        </HighlightHover>
       </a>
     </div>
   )
